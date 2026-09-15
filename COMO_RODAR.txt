@@ -1,0 +1,37 @@
+FLOW FORGE - como rodar sem instalar
+
+1. Descompacte esta pasta em qualquer lugar onde voce possa gravar
+   (Documentos, Area de Trabalho, um pendrive). Nao precisa ser no
+   Arquivos de Programas, e nao precisa de administrador.
+
+2. De um clique duplo em "Flow Forge.bat".
+
+Pronto. Nao ha instalacao, nao ha atalho no menu iniciar, e nada e
+escrito fora do seu perfil de usuario.
+
+
+SE APARECER "Python nao foi encontrado"
+
+O programa e escrito em Python e precisa dele para rodar. Ele nao usa
+nenhuma biblioteca externa - so o que vem junto com o Python.
+
+   https://www.python.org/downloads/
+
+Na instalacao, marque "Add python.exe to PATH" e escolha
+"Install for me only" - assim nao pede administrador.
+
+
+ONDE FICAM AS SUAS COISAS
+
+Os fluxogramas ficam onde voce salvar; sao arquivos .json comuns.
+A lista de departamentos e cargos fica em:
+
+   %APPDATA%\FlowForge\catalogo.json
+
+Essa pasta e do seu usuario. Apagar o Flow Forge nao apaga o que voce
+cadastrou; e apagar essa pasta nao quebra o programa - ele volta para a
+lista de exemplo.
+
+
+Flow Forge 1.2.0 - Lucca Madrigrano
+Leia o LICENSE antes de repassar a alguem.
