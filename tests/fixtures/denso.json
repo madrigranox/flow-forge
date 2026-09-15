@@ -1,0 +1,216 @@
+{
+  "title": "Fluxo denso de compras (fixture de regressão)",
+  "docCode": "TEST-0001 REV. 0",
+  "department": "Suprimentos",
+  "lanes": [
+    {
+      "id": "L1",
+      "label": "Área 1"
+    },
+    {
+      "id": "L2",
+      "label": "Área 2"
+    },
+    {
+      "id": "L3",
+      "label": "Área 3"
+    },
+    {
+      "id": "L4",
+      "label": "Área 4"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "N_START",
+      "laneId": "L1",
+      "type": "start",
+      "label": "Demanda recebida"
+    },
+    {
+      "id": "N1",
+      "laneId": "L1",
+      "type": "task",
+      "label": "Registrar ocorrência"
+    },
+    {
+      "id": "N2",
+      "laneId": "L3",
+      "type": "task",
+      "label": "Verificar estoque"
+    },
+    {
+      "id": "N3",
+      "laneId": "L2",
+      "type": "decision",
+      "label": "Item disponível?"
+    },
+    {
+      "id": "N4",
+      "laneId": "L4",
+      "type": "task",
+      "label": "Emitir requisição"
+    },
+    {
+      "id": "N5",
+      "laneId": "L1",
+      "type": "task",
+      "label": "Cotar fornecedor"
+    },
+    {
+      "id": "N6",
+      "laneId": "L3",
+      "type": "decision",
+      "label": "Valor acima do limite?"
+    },
+    {
+      "id": "N7",
+      "laneId": "L4",
+      "type": "task",
+      "label": "Aprovar na diretoria"
+    },
+    {
+      "id": "N8",
+      "laneId": "L2",
+      "type": "task",
+      "label": "Gerar ordem de compra"
+    },
+    {
+      "id": "N9",
+      "laneId": "L1",
+      "type": "task",
+      "label": "Receber material"
+    },
+    {
+      "id": "N10",
+      "laneId": "L4",
+      "type": "task",
+      "label": "Conferir nota fiscal"
+    },
+    {
+      "id": "N11",
+      "laneId": "L2",
+      "type": "decision",
+      "label": "Conformidade OK?"
+    },
+    {
+      "id": "N12",
+      "laneId": "L3",
+      "type": "subprocess",
+      "label": "Tratar não conformidade"
+    },
+    {
+      "id": "N13",
+      "laneId": "L1",
+      "type": "task",
+      "label": "Dar entrada no sistema"
+    },
+    {
+      "id": "N14",
+      "laneId": "L4",
+      "type": "task",
+      "label": "Arquivar documentação"
+    },
+    {
+      "id": "N15",
+      "laneId": "L2",
+      "type": "task",
+      "label": "Notificar solicitante"
+    },
+    {
+      "id": "N_END",
+      "laneId": "L3",
+      "type": "end",
+      "label": "Processo concluído"
+    }
+  ],
+  "edges": [
+    {
+      "from": "N_START",
+      "to": "N1"
+    },
+    {
+      "from": "N1",
+      "to": "N2"
+    },
+    {
+      "from": "N2",
+      "to": "N3"
+    },
+    {
+      "from": "N3",
+      "to": "N4",
+      "label": "Sim"
+    },
+    {
+      "from": "N3",
+      "to": "N5",
+      "label": "Não"
+    },
+    {
+      "from": "N5",
+      "to": "N6"
+    },
+    {
+      "from": "N6",
+      "to": "N7",
+      "label": "Sim"
+    },
+    {
+      "from": "N6",
+      "to": "N8",
+      "label": "Não"
+    },
+    {
+      "from": "N7",
+      "to": "N8"
+    },
+    {
+      "from": "N4",
+      "to": "N9"
+    },
+    {
+      "from": "N8",
+      "to": "N9"
+    },
+    {
+      "from": "N9",
+      "to": "N10"
+    },
+    {
+      "from": "N10",
+      "to": "N11"
+    },
+    {
+      "from": "N11",
+      "to": "N12",
+      "label": "Não"
+    },
+    {
+      "from": "N11",
+      "to": "N13",
+      "label": "Sim"
+    },
+    {
+      "from": "N12",
+      "to": "N9",
+      "label": "Reenviar"
+    },
+    {
+      "from": "N13",
+      "to": "N14"
+    },
+    {
+      "from": "N13",
+      "to": "N15"
+    },
+    {
+      "from": "N14",
+      "to": "N_END"
+    },
+    {
+      "from": "N15",
+      "to": "N_END"
+    }
+  ]
+}

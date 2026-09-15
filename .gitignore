@@ -1,0 +1,29 @@
+# Build e distribuição (gerados por `python -m PyInstaller build.spec`)
+build/
+dist/
+installer/
+*.exe
+*.zip
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Fluxogramas de trabalho — não versione processo de empresa nenhuma
+*.pdf
+/*.json
+!versao.json

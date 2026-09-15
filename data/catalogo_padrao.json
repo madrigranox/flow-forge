@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 2,
+  "_comentario": "Semente do catálogo corporativo: departamentos e os cargos que existem dentro de cada um. A lista que vale é a mantida pelo usuário em %APPDATA%/FlowForge/catalogo.json, editável em Configurações > Departamentos e cargos. Os nomes abaixo são um ponto de partida plausível — substitua pelos oficiais.",
+  "departamentos": [
+    {
+      "nome": "Comissionamento",
+      "cargos": ["Engenheiro de Comissionamento", "Inspetor de Comissionamento", "Supervisor de Comissionamento"]
+    },
+    {
+      "nome": "Contratos",
+      "cargos": ["Analista de Contratos", "Gerente de Contrato"]
+    },
+    {
+      "nome": "Controladoria",
+      "cargos": ["Analista Financeiro", "Analista de Custos", "Controller"]
+    },
+    {
+      "nome": "Engenharia",
+      "cargos": ["Engenheiro de Processos", "Engenheiro de Projetos", "Projetista", "Coordenador de Engenharia"]
+    },
+    {
+      "nome": "Engenharia de Manutenção",
+      "cargos": ["Engenheiro de Confiabilidade", "Engenheiro de Manutenção", "Analista de Dados de Manutenção"]
+    },
+    {
+      "nome": "Gestão de Negócios e Qualidade",
+      "cargos": ["Analista de Processos", "Analista de Qualidade", "Gerente de Qualidade", "Auditor Interno"]
+    },
+    {
+      "nome": "Integridade de Ativos",
+      "cargos": ["Especialista em Integridade de Ativos", "Inspetor de Equipamentos", "Inspetor de Corrosão"]
+    },
+    {
+      "nome": "Jurídico",
+      "cargos": ["Advogado Corporativo", "Analista Jurídico"]
+    },
+    {
+      "nome": "Logística",
+      "cargos": ["Analista de Logística", "Coordenador de Logística", "Radio Operator", "Material Man"]
+    },
+    {
+      "nome": "Manutenção",
+      "cargos": ["Coordenador de Manutenção", "Supervisor de Manutenção", "Técnico de Automação", "Técnico de Instrumentação", "Técnico de Manutenção Elétrica", "Técnico de Manutenção Mecânica"]
+    },
+    {
+      "nome": "Marinha",
+      "cargos": ["Comandante", "Imediato", "Chefe de Máquinas", "Marino / Supervisor", "Praça de Máquinas", "OIM (Offshore Installation Manager)"]
+    },
+    {
+      "nome": "Meio Ambiente",
+      "cargos": ["Analista Ambiental", "Técnico Ambiental"]
+    },
+    {
+      "nome": "Operações",
+      "cargos": ["Control Operator (CCR)", "Coordenador de Operações", "Gerente de Operações", "Operador de Produção", "Supervisor de Produção", "Equipe Designada"]
+    },
+    {
+      "nome": "Planejamento e Controle da Manutenção (PCM)",
+      "cargos": ["Planejador de Manutenção", "Programador de Manutenção", "Analista de PCM"]
+    },
+    {
+      "nome": "Projetos",
+      "cargos": ["Gerente de Projetos", "Analista de Projetos"]
+    },
+    {
+      "nome": "Recursos Humanos",
+      "cargos": ["Analista de Recursos Humanos", "Assistente Administrativo", "Business Partner de RH"]
+    },
+    {
+      "nome": "Saúde, Meio Ambiente e Segurança (SMS)",
+      "cargos": ["Coordenador de SMS", "Técnico de Segurança do Trabalho", "Enfermeiro do Trabalho", "Médico do Trabalho"]
+    },
+    {
+      "nome": "Segurança Operacional",
+      "cargos": ["Analista de Segurança de Processo", "Especialista em Barreiras"]
+    },
+    {
+      "nome": "Suprimentos",
+      "cargos": ["Analista de Suprimentos", "Almoxarife", "Comprador", "Inspetor de Qualidade"]
+    },
+    {
+      "nome": "Tecnologia da Informação",
+      "cargos": ["Analista de Sistemas", "Analista de Suporte", "Administrador de Redes"]
+    },
+    {
+      "nome": "Treinamento e Desenvolvimento",
+      "cargos": ["Analista de Treinamento", "Instrutor Técnico"]
+    },
+    {
+      "nome": "Comissaria",
+      "cargos": ["Comissário", "Camareiro", "Cozinheiro"]
+    }
+  ]
+}

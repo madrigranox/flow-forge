@@ -1,0 +1,266 @@
+{
+  "title": "Requisição e Compra de Material",
+  "docCode": "PRO-0001 REV. 0",
+  "department": "Suprimentos",
+  "lanes": [
+    {
+      "id": "L1",
+      "label": "Supervisor de Manutenção"
+    },
+    {
+      "id": "L2",
+      "label": "Analista de Suprimentos"
+    },
+    {
+      "id": "L3",
+      "label": "Almoxarife"
+    },
+    {
+      "id": "L4",
+      "label": "Coordenador de Manutenção"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "N_START",
+      "laneId": "L1",
+      "type": "start",
+      "label": "Necessidade Identificada"
+    },
+    {
+      "id": "N1",
+      "laneId": "L1",
+      "type": "task",
+      "label": "Registrar Requisição"
+    },
+    {
+      "id": "N2",
+      "laneId": "L2",
+      "type": "task",
+      "label": "Conferir Requisição"
+    },
+    {
+      "id": "N3",
+      "laneId": "L3",
+      "type": "task",
+      "label": "Verificar Saldo em Estoque"
+    },
+    {
+      "id": "N4",
+      "laneId": "L1",
+      "type": "task",
+      "label": "Complementar Especificação"
+    },
+    {
+      "id": "N5",
+      "laneId": "L1",
+      "type": "task",
+      "label": "Acompanhar Requisição"
+    },
+    {
+      "id": "D1",
+      "laneId": "L2",
+      "type": "decision",
+      "label": "Precisa de compra externa?"
+    },
+    {
+      "id": "N_END1",
+      "laneId": "L2",
+      "type": "end",
+      "label": "Atendido pelo Estoque"
+    },
+    {
+      "id": "N6",
+      "laneId": "L2",
+      "type": "subprocess",
+      "label": "Abrir Cotação",
+      "group": {
+        "label": "Cotação com Fornecedores",
+        "nodes": [
+          {
+            "id": "G1_N1",
+            "type": "task",
+            "label": "Selecionar Fornecedores"
+          },
+          {
+            "id": "G1_N2",
+            "type": "task",
+            "label": "Coletar Propostas"
+          },
+          {
+            "id": "G1_N3",
+            "type": "task",
+            "label": "Montar Mapa Comparativo"
+          }
+        ],
+        "edges": [
+          {
+            "from": "G1_N1",
+            "to": "G1_N2"
+          },
+          {
+            "from": "G1_N2",
+            "to": "G1_N3"
+          }
+        ]
+      }
+    },
+    {
+      "id": "N7",
+      "laneId": "L4",
+      "type": "task",
+      "label": "Analisar Propostas"
+    },
+    {
+      "id": "D2",
+      "laneId": "L4",
+      "type": "decision",
+      "label": "Proposta aprovada?"
+    },
+    {
+      "id": "N8",
+      "laneId": "L4",
+      "type": "task",
+      "label": "Solicitar Renegociação"
+    },
+    {
+      "id": "N9",
+      "laneId": "L2",
+      "type": "task",
+      "label": "Renegociar com Fornecedor"
+    },
+    {
+      "id": "N10",
+      "laneId": "L2",
+      "type": "task",
+      "label": "Emitir Pedido de Compra"
+    },
+    {
+      "id": "N11",
+      "laneId": "L4",
+      "type": "task",
+      "label": "Confirmar Recebimento"
+    },
+    {
+      "id": "N_END2",
+      "laneId": "L2",
+      "type": "end",
+      "label": "Requisição Concluída"
+    },
+    {
+      "id": "A1",
+      "laneId": "L1",
+      "type": "annotation",
+      "label": "Gap: prazo de resposta (SLA) da requisição não definido."
+    },
+    {
+      "id": "A2",
+      "laneId": "L2",
+      "type": "annotation",
+      "label": "Gap: valor mínimo que exige três cotações não documentado."
+    },
+    {
+      "id": "A3",
+      "laneId": "L2",
+      "type": "annotation",
+      "label": "Gap: não está claro quem registra o recebimento no sistema."
+    }
+  ],
+  "edges": [
+    {
+      "from": "N_START",
+      "to": "N1"
+    },
+    {
+      "from": "N1",
+      "to": "N2"
+    },
+    {
+      "from": "N2",
+      "to": "N3"
+    },
+    {
+      "from": "N3",
+      "to": "N4"
+    },
+    {
+      "from": "N4",
+      "to": "N5"
+    },
+    {
+      "from": "N5",
+      "to": "D1"
+    },
+    {
+      "from": "D1",
+      "to": "N_END1",
+      "label": "Não",
+      "style": {
+        "color": "#16a34a"
+      }
+    },
+    {
+      "from": "D1",
+      "to": "N6",
+      "label": "Sim",
+      "style": {
+        "color": "#dc2626"
+      }
+    },
+    {
+      "from": "N6",
+      "to": "N7"
+    },
+    {
+      "from": "N7",
+      "to": "D2"
+    },
+    {
+      "from": "D2",
+      "to": "N10",
+      "label": "Sim",
+      "style": {
+        "color": "#16a34a"
+      }
+    },
+    {
+      "from": "D2",
+      "to": "N8",
+      "label": "Não",
+      "style": {
+        "color": "#dc2626"
+      }
+    },
+    {
+      "from": "N8",
+      "to": "N9"
+    },
+    {
+      "from": "N9",
+      "to": "N10"
+    },
+    {
+      "from": "N10",
+      "to": "N11"
+    },
+    {
+      "from": "N11",
+      "to": "N_END2"
+    },
+    {
+      "from": "N1",
+      "to": "A1",
+      "type": "annotation"
+    },
+    {
+      "from": "D1",
+      "to": "A2",
+      "type": "annotation"
+    },
+    {
+      "from": "N11",
+      "to": "A3",
+      "type": "annotation"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "title": "Retorno cruzado",
+  "lanes": [
+    {
+      "id": "L1",
+      "label": "Ator 1"
+    },
+    {
+      "id": "L2",
+      "label": "Ator 2"
+    },
+    {
+      "id": "L3",
+      "label": "Ator 3"
+    },
+    {
+      "id": "L4",
+      "label": "Ator 4"
+    },
+    {
+      "id": "L5",
+      "label": "Ator 5"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "N1",
+      "laneId": "L2",
+      "type": "task",
+      "label": "Etapa 1"
+    },
+    {
+      "id": "N2",
+      "laneId": "L3",
+      "type": "task",
+      "label": "Etapa 2"
+    },
+    {
+      "id": "N3",
+      "laneId": "L4",
+      "type": "task",
+      "label": "Etapa 3"
+    },
+    {
+      "id": "N4",
+      "laneId": "L5",
+      "type": "task",
+      "label": "Etapa 4"
+    },
+    {
+      "id": "N5",
+      "laneId": "L1",
+      "type": "task",
+      "label": "Etapa 5"
+    },
+    {
+      "id": "N6",
+      "laneId": "L2",
+      "type": "task",
+      "label": "Etapa 6"
+    },
+    {
+      "id": "N7",
+      "laneId": "L3",
+      "type": "task",
+      "label": "Etapa 7"
+    },
+    {
+      "id": "N8",
+      "laneId": "L4",
+      "type": "task",
+      "label": "Etapa 8"
+    },
+    {
+      "id": "N9",
+      "laneId": "L5",
+      "type": "task",
+      "label": "Etapa 9"
+    },
+    {
+      "id": "N10",
+      "laneId": "L1",
+      "type": "task",
+      "label": "Etapa 10"
+    },
+    {
+      "id": "C1",
+      "laneId": "L1",
+      "type": "annotation",
+      "label": "Gap: alçada"
+    }
+  ],
+  "edges": [
+    {
+      "from": "N1",
+      "to": "N2"
+    },
+    {
+      "from": "N2",
+      "to": "N3"
+    },
+    {
+      "from": "N3",
+      "to": "N4"
+    },
+    {
+      "from": "N4",
+      "to": "N5"
+    },
+    {
+      "from": "N5",
+      "to": "N6"
+    },
+    {
+      "from": "N6",
+      "to": "N7"
+    },
+    {
+      "from": "N7",
+      "to": "N8"
+    },
+    {
+      "from": "N8",
+      "to": "N9"
+    },
+    {
+      "from": "N9",
+      "to": "N10"
+    },
+    {
+      "from": "N10",
+      "to": "N2",
+      "label": "Reprocessar"
+    },
+    {
+      "from": "N8",
+      "to": "N3",
+      "label": "Revisar"
+    },
+    {
+      "from": "N5",
+      "to": "C1",
+      "type": "annotation"
+    }
+  ]
+}
